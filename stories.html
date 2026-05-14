@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DuneTales — Stories</title>
+
+  <!-- Template CSS (same as index.html) -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- Polaroid page CSS -->
+  <link rel="stylesheet" href="./assets/css/stories.css" />
+
+  <!-- Google fonts (same as index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header active" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="index.html" class="logo">DuneTales</a>
+      </h1>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">DuneTales</a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link">
+              <span>Home</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li class="desktop-only">
+            <a href="index.html#about" class="navbar-link">
+              <span>About</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li class="desktop-only">
+            <a href="index.html#service" class="navbar-link">
+              <span>What We Do</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="stories.html" class="btn btn-primary navbar-btn">
+              <span>Stories</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="stories-hero">
+      <div class="container">
+        <!-- <p class="section-subtitle">
+          <span>Our Stories</span>
+        </p> -->
+        <h1 class="stories-hero__title">
+          Every Worker Has a <strong>Story Worth Telling</strong>
+        </h1>
+        <p class="stories-hero__text">
+          Tap any portrait to watch their story, in their own words.
+        </p>
+      </div>
+    </section>
+
+    <!-- Polaroids Grid Section -->
+    <section class="stories-grid">
+      <div class="container">
+        <!-- <p class="stories-grid__label">Portraits</p> -->
+        <div class="polaroids" aria-label="Stories grid">
+      <a class="polaroid" href="story.html?id=raj" aria-label="Open story: Raj Kishore Upadhyay, Site Manager at DESS College" data-story-card data-story-id="raj">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true">
+            <img src="./assets/images/raj-polaroid.png" alt="Raj Kishore Upadhyay" loading="lazy" data-story-image />
+          </div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name" data-story-name>Raj Kishore Upadhyay</div>
+            <div class="polaroid__place" data-story-meta>DESS College • Site Manager</div>
+            <span class="polaroid__read" data-story-cta>Watch →</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="polaroid polaroid--empty" aria-label="Story coming soon">
+        <figure class="polaroid__frame">
+          <div class="polaroid__photo" aria-hidden="true"><span>📷 Story coming soon</span></div>
+          <figcaption class="polaroid__caption">
+            <div class="polaroid__name">Coming Soon</div>
+            <div class="polaroid__place">City, Country</div>
+          </figcaption>
+        </figure>
+      </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Legal</h3>
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link">Terms of use</a></li>
+          <li><a href="#" class="footer-link">Privacy & Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Quick Links</h3>
+        <ul class="footer-list">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="stories.html" class="footer-link">Stories</a></li>
+          <li><a href="index.html#about" class="footer-link">About</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__tagline">DuneTales preserves the voices of workers who built the Gulf.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright">
+          Copyright 2026 <a href="index.html" class="copyright-link">DuneTales</a>. All Rights Reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  
+  <!-- Scroll to top -->
+  <button class="scroll-top-btn" data-scroll-top aria-label="Scroll to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/stories.js"></script>
+  <script src="./assets/js/stories-data.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+

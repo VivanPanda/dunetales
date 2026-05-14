@@ -1,0 +1,20 @@
+{
+  "stories": [
+    {
+      "id": "raj",
+      "name": "Raj Kishore Upadhyay",
+      "role": "Site Manager",
+      "org": "DESS College",
+      "subtitle": "Site Manager at DESS College \u2022 In the UAE since 2007",
+      "cardMeta": "DESS College \u2022 Site Manager",
+      "image": "./assets/images/raj-polaroid.png",
+      "youtubeId": "WPIyA8mDnBA",
+      "videoTitle": "Raj Kishore Upadhyay \u2014 DuneTales",
+      "intro": [
+        "Raj Kishore Upadhyay has been part of the DESS College community since 2007. As site manager, he oversees the daily operations that keep the campus safe, clean, and ready for learning.",
+        "His work spans coordinating teams, maintaining facilities, and resolving issues before they become visible. Colleagues know him for his steady presence, attention to detail, and the care he brings to the campus.",
+        "In this story, Raj reflects on his years in the UAE, the work that shaped his journey, and the pride he takes in supporting a place dedicated to education."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,547 @@
+/* DuneTales Stories + Story pages
+   Uses the main template variables from assets/css/style.css.
+   Brand colour: warm desert-amber hsl(32, 90%, 52%) */
+
+:root {
+  --dt-bg: var(--baby-powder, hsl(30, 50%, 97%));
+  --dt-surface: var(--white, #ffffff);
+  --dt-ink: var(--eerie-black-2, #262626);
+  --dt-muted: var(--sonic-silver, #777);
+  --dt-brand: hsl(32, 90%, 52%);
+  --dt-brand-50: hsla(32, 90%, 52%, 0.5);
+  --dt-border: var(--platinum, #e8e8e8);
+  --dt-shadow: 0 10px 30px rgba(0,0,0,.12);
+  --dt-radius: 14px;
+}
+
+/* Full-page background matching service section */
+body {
+  background-color: var(--dt-bg);
+  background-image: url('../images/service-map.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Decorative elements removed - using world map background instead */
+
+a { color: inherit; text-decoration: none; }
+
+
+/* ───────────────────────────────────────────────
+   STORIES HERO SECTION
+   ─────────────────────────────────────────────── */
+.stories-hero {
+  background: transparent;
+  color: var(--dt-ink);
+  padding-block: 140px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stories-hero .section-subtitle {
+  justify-content: center;
+  color: var(--dt-brand);
+  font-family: var(--ff-inter, system-ui);
+  font-size: 1.8rem;
+  margin-block-end: 20px;
+}
+
+.stories-hero .section-subtitle span {
+  color: var(--dt-brand);
+}
+
+.stories-hero .section-subtitle::before {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: var(--dt-brand);
+}
+
+.stories-hero__title {
+  margin: 0;
+  font-family: var(--ff-oswald, system-ui);
+  font-size: clamp(3.2rem, 5vw + 1rem, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.stories-hero__title strong {
+  color: var(--dt-brand);
+}
+
+.stories-hero__text {
+  margin: 24px auto 0;
+  font-family: var(--ff-inter, system-ui);
+  font-size: 1.8rem;
+  color: var(--dt-muted);
+  max-width: 45ch;
+  letter-spacing: -0.5px;
+}
+
+
+/* ───────────────────────────────────────────────
+   STORIES GRID SECTION
+   ─────────────────────────────────────────────── */
+.stories-grid {
+  background: transparent;
+  padding-block: 20px 100px;
+  position: relative;
+}
+
+/* Decorative divider */
+.stories-grid::before {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--dt-brand), transparent);
+  margin: 0 auto 50px;
+  border-radius: 2px;
+}
+
+/* Section label above grid */
+.stories-grid__label {
+  text-align: center;
+  font-family: var(--ff-oswald, system-ui);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--dt-muted);
+  margin-bottom: 40px;
+}
+
+.stories-grid > .container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+
+/* ───────────────────────────────────────────────
+   BACKLINK (story page)
+   ─────────────────────────────────────────────── */
+.backlink {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  background: rgba(0,0,0,0.05);
+  color: var(--dt-ink);
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: background .2s, color .2s;
+}
+
+.backlink:hover,
+.backlink:focus-visible {
+  background: var(--dt-brand);
+  color: #fff;
+}
+
+
+/* ───────────────────────────────────────────────
+   POLAROIDS GRID
+   ─────────────────────────────────────────────── */
+.polaroids {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+@media (min-width: 540px) {
+  .polaroids { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px) {
+  .polaroids { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+
+/* ───────────────────────────────────────────────
+   POLAROID CARD
+   ─────────────────────────────────────────────── */
+.polaroid {
+  width: min(320px, 100%);
+  color: inherit;
+}
+
+.polaroid__frame {
+  position: relative;
+  margin: 0;
+  background: var(--dt-surface);
+  border-radius: 10px;
+  box-shadow: var(--dt-shadow);
+  padding: 14px 14px 18px;
+  transform: rotate(var(--rot, -1.25deg));
+  transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.polaroid:nth-child(3n) { --rot: 1.2deg; }
+.polaroid:nth-child(4n) { --rot: -2deg; }
+.polaroid:nth-child(5n) { --rot: 2.2deg; }
+
+.polaroid:hover .polaroid__frame,
+.polaroid:focus .polaroid__frame,
+.polaroid:focus-within .polaroid__frame {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+}
+
+/* Focus-visible accessibility */
+a.polaroid:focus-visible .polaroid__frame {
+  outline: 3px solid var(--dt-brand);
+  outline-offset: 4px;
+}
+
+.polaroid__photo {
+  height: 240px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, hsla(32, 90%, 52%, .22), hsla(32, 80%, 60%, .16));
+  display: grid;
+  place-items: center;
+  color: rgba(0,0,0,.6);
+  border: 1px solid rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+.polaroid__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder photo styling */
+.polaroid__photo span {
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.7);
+  border: 1px dashed rgba(0,0,0,.18);
+}
+
+.polaroid__caption {
+  padding-top: 14px;
+  font-family: 'Caveat', cursive;
+  color: var(--dt-ink);
+  position: relative;
+}
+
+.polaroid__name {
+  font-size: 2.6rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.polaroid__place {
+  margin-top: 4px;
+  font-size: 1.9rem;
+  color: rgba(0,0,0,.6);
+}
+
+/* "Read →" hover label for active story cards */
+.polaroid__read {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dt-brand);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+a.polaroid:hover .polaroid__read,
+a.polaroid:focus-within .polaroid__read {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ───────────────────────────────────────────────
+   COMING SOON CARDS (empty slots)
+   ─────────────────────────────────────────────── */
+.polaroid--empty {
+  opacity: .6;
+  pointer-events: none;
+}
+
+.polaroid--empty .polaroid__frame {
+  filter: sepia(.15) saturate(.8);
+}
+
+.polaroid--empty .polaroid__photo {
+  background: linear-gradient(135deg, hsla(35, 40%, 70%, .2), hsla(30, 30%, 80%, .15));
+}
+
+.polaroid--empty .polaroid__photo span {
+  background: rgba(255,255,255,.55);
+  border: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: 'Caveat', cursive;
+  color: rgba(0,0,0,.45);
+}
+
+/* Hidden by filter logic */
+.polaroid.is-hidden {
+  display: none;
+}
+
+
+/* ───────────────────────────────────────────────
+   STORY HERO (story.html – portrait at top)
+   ─────────────────────────────────────────────── */
+.story__hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.story__hero .polaroid__frame {
+  width: 340px;
+  max-width: 100%;
+  transform: none;
+}
+
+.story__hero .polaroid__photo {
+  height: 320px;
+}
+
+.story__hero-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem;
+  text-align: center;
+  padding-top: 14px;
+  color: var(--dt-ink);
+}
+
+
+/* ───────────────────────────────────────────────
+   STORY PAGE LAYOUT
+   ─────────────────────────────────────────────── */
+.page {
+  padding: 140px 20px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page__header {
+  margin-bottom: 40px;
+}
+
+.page__title {
+  font-family: var(--ff-oswald, system-ui);
+  font-size: clamp(2.8rem, 4vw + 1rem, 4rem);
+  font-weight: 600;
+  color: var(--dt-ink);
+  margin: 10px 0;
+}
+
+.page__subtitle {
+  font-family: var(--ff-inter, system-ui);
+  font-size: 1.6rem;
+  color: var(--dt-muted);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .story {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 2.2rem;
+  color: var(--dt-ink);
+}
+
+
+/* ───────────────────────────────────────────────
+   VIDEO CARD (story.html)
+   ─────────────────────────────────────────────── */
+.video-card {
+  background: var(--dt-surface);
+  border: 1px solid rgba(0,0,0,.06);
+  border-left: 4px solid var(--dt-brand);
+  border-radius: var(--dt-radius);
+  box-shadow: var(--dt-shadow);
+  padding: 22px;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  height: min(70vh, 720px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .video-embed {
+    height: 45vh;
+  }
+}
+
+
+/* ───────────────────────────────────────────────
+   ARTICLE (story.html)
+   ─────────────────────────────────────────────── */
+.article {
+  background: var(--dt-surface);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--dt-radius);
+  box-shadow: var(--dt-shadow);
+  padding: 24px;
+}
+
+.article h3 {
+  font-family: var(--ff-oswald, system-ui);
+  font-size: 1.8rem;
+  color: var(--dt-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.article h3:first-child {
+  margin-top: 0;
+}
+
+.article p {
+  font-size: 1.65rem;
+  line-height: 1.85;
+  color: var(--dt-ink);
+  margin-bottom: 12px;
+}
+
+.article blockquote {
+  border-left: 3px solid var(--dt-brand);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem;
+  font-style: italic;
+  color: hsl(32, 60%, 38%);
+  line-height: 1.4;
+}
+
+
+/* ───────────────────────────────────────────────
+   MOBILE / RESPONSIVE
+   ─────────────────────────────────────────────── */
+
+/* Mobile: no rotation, full-width cards */
+@media (max-width: 539px) {
+  .polaroid__frame {
+    transform: none !important;
+  }
+  .polaroids {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .polaroid__photo {
+    height: 200px;
+  }
+}
+
+/* Filter bar scrollable on mobile */
+@media (max-width: 600px) {
+  .filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: 6px;
+  }
+}
+
+
+/* ───────────────────────────────────────────────
+   DARK THEME
+   ─────────────────────────────────────────────── */
+html[data-theme="dark"] body {
+  --dt-bg: #0f1313;
+  --dt-surface: #121818;
+  --dt-ink: #f2f6f6;
+  --dt-muted: rgba(255,255,255,.68);
+  --dt-border: rgba(255,255,255,.12);
+  background:
+    radial-gradient(1000px 600px at 15% -10%, hsla(32, 90%, 52%, .14), transparent 55%),
+    radial-gradient(800px 500px at 90% 10%, hsla(32, 80%, 60%, .10), transparent 50%),
+    var(--dt-bg);
+}
+
+html[data-theme="dark"] .polaroid__frame,
+html[data-theme="dark"] .audio-card,
+html[data-theme="dark"] .article {
+  border-color: rgba(255,255,255,.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+
+html[data-theme="dark"] .polaroid__photo span {
+  background: rgba(0,0,0,.35);
+  border-color: rgba(255,255,255,.22);
+  color: rgba(255,255,255,.9);
+}
+
+html[data-theme="dark"] .polaroid__place {
+  color: rgba(255,255,255,.72);
+}
+
+html[data-theme="dark"] .backlink {
+  background: rgba(255,255,255,.08);
+  color: var(--dt-ink);
+}
+
+html[data-theme="dark"] .filter-pill {
+  border-color: var(--dt-brand);
+  color: var(--dt-brand);
+}
+
+html[data-theme="dark"] .filter-pill.active {
+  background: var(--dt-brand);
+  color: #fff;
+}
+
+html[data-theme="dark"] .article blockquote {
+  color: hsl(32, 70%, 65%);
+}
+
+html[data-theme="dark"] .polaroid--empty .polaroid__frame {
+  filter: sepia(.08) saturate(.6) brightness(.8);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .polaroid__frame { transform: none !important; transition: none !important; }
+  .polaroid__read { transition: none !important; }
+}
