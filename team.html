@@ -354,53 +354,6 @@
     }
 
 
-    .stats-strip {
-      background-color: var(--white);
-      border-bottom: 1px solid var(--platinum);
-      padding: 40px 28px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      display: block;
-      font-family: var(--ff-oswald);
-      font-size: 5rem;
-      font-weight: 600;
-      color: var(--pistachio);
-      line-height: 1;
-    }
-
-    .stat-label {
-      display: block;
-      font-size: 1.3rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--granite-gray);
-      margin-top: 8px;
-    }
-
-    .navbar-link.active {
-      color: var(--pistachio);
-    }
-
-    @media (min-width: 992px) {
-      .navbar-link:is(:hover, :focus) span {
-        color: var(--pistachio);
-      }
-
-      .navbar-link.active span {
-        color: var(--pistachio);
-      }
-    }
-
     .team-card,
     .founder-card,
     .values-item,
@@ -513,7 +466,7 @@
     <div class="container">
 
       <h1>
-        <a href="#home" class="logo">DuneTales</a>
+        <a href="index.html" class="logo">DuneTales</a>
       </h1>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
@@ -526,7 +479,7 @@
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
-        <a href="#home" class="logo">DuneTales</a>
+        <a href="index.html" class="logo">DuneTales</a>
 
         <ul class="navbar-list">
 
@@ -555,7 +508,7 @@
           </li>
 
           <li class="desktop-only">
-            <a href="team.html" class="navbar-link active">
+            <a href="team.html" class="navbar-link">
               <span>Our Team</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -610,27 +563,12 @@
       <section class="team-intro-strip">
         <div class="container">
           <p class="strip-text">
-            We are volunteers, journalists, translators, and listeners — united
-            by the belief that every worker deserves to be heard with dignity.
+            We are two students documenting migrant worker stories in Dubai,
+            with care and consent at the centre of everything we do.
           </p>
-          <span class="strip-badge">6 People · Dubai-based</span>
+          <span class="strip-badge">Dubai-based</span>
         </div>
       </section>
-
-      <div class="stats-strip">
-        <div class="stat-item">
-          <span class="stat-number" data-target="17">0</span>
-          <span class="stat-label">Stories Collected</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="7">0</span>
-          <span class="stat-label">Languages Spoken</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="2007">0</span>
-          <span class="stat-label">Year We Started</span>
-        </div>
-      </div>
 
       <section class="section team-founders">
         <div class="container">
@@ -669,6 +607,7 @@
         </div>
       </section>
 
+      <!-- Real team members to be added here.
       <section class="section team-grid-section">
         <div class="container">
 
@@ -785,6 +724,7 @@
 
         </div>
       </section>
+      -->
 
       <section class="team-values">
         <div class="container">
@@ -850,10 +790,20 @@
     <div class="container">
 
       <div class="footer__col">
-        <h3 class="footer__col-title">Legal</h3>
-        <ul class="footer-list">
-          <li><a href="#" class="footer-link">Terms of use</a></li>
-          <li><a href="#" class="footer-link">Privacy &amp; Policy</a></li>
+        <h3 class="footer__col-title">Connect</h3>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.instagram.com/dunetalesdubai/" class="footer-social-link" target="_blank" rel="noopener" aria-label="DuneTales on Instagram">
+              <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/dunetales/" class="footer-social-link" target="_blank" rel="noopener" aria-label="DuneTales on LinkedIn">
+              <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
+              <span>LinkedIn</span>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -874,7 +824,7 @@
 
       <div class="footer__bottom">
         <p class="copyright">
-          Copyright 2026 <a href="#home" class="copyright-link">DuneTales</a>. All Rights Reserved.
+          Copyright 2026 <a href="index.html" class="copyright-link">DuneTales</a>. All Rights Reserved.
         </p>
       </div>
 
@@ -909,33 +859,6 @@
       }, { threshold: 0.15 });
 
       revealEls.forEach((el) => observer.observe(el));
-    }
-
-    const counters = document.querySelectorAll('.stat-number');
-
-    if (counters.length > 0) {
-      const countObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          const target = parseInt(el.dataset.target, 10);
-          const duration = 1200;
-          const start = performance.now();
-          const tick = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            el.textContent = Math.floor(progress * target);
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.textContent = target;
-            }
-          };
-          requestAnimationFrame(tick);
-          countObserver.unobserve(el);
-        });
-      }, { threshold: 0.5 });
-
-      counters.forEach((counter) => countObserver.observe(counter));
     }
   </script>
 
