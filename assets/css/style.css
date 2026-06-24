@@ -1575,3 +1575,43 @@ body {
   .scroll-top-btn { transition: none !important; }
   * { scroll-behavior: auto !important; }
 }
+
+
+/*-----------------------------------*\
+  #PRESS STRIP
+\*-----------------------------------*/
+
+.press-strip { padding: 56px 0; text-align: center; }
+.press-strip__eyebrow {
+  font-family: var(--ff-oswald);
+  font-weight: var(--fw-600);
+  font-size: 1.2rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pistachio);
+  margin-bottom: 22px;
+}
+.press-strip__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.press-strip__logo {
+  display: inline-flex;
+  opacity: 0.58;
+  transition: opacity 0.25s ease;
+}
+.press-strip__logo:is(:hover, :focus) { opacity: 1; }
+.press-strip__logo img { height: 30px; width: auto; display: block; }
+.press-strip__logo:last-of-type img { height: 26px; }
+.press-strip__dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--pistachio); display: inline-block;
+}
+@media (max-width: 575px) {
+  .press-strip__logo img,
+  .press-strip__logo:last-of-type img { height: 22px; }
+  .press-strip__logos { gap: 26px; }
+}
