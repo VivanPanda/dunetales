@@ -38,7 +38,7 @@
   const buildCard = (story) => {
     const link = document.createElement("a");
     link.className = "polaroid";
-    link.href = "story.html?id=" + story.id;
+    link.href = "/story?id=" + story.id;
     const role = story.role ? ", " + story.role : "";
     const org = story.org ? " at " + story.org : "";
     link.setAttribute("aria-label", "Open story: " + story.name + role + org);
@@ -116,7 +116,7 @@
         setImage(img, story.image, story.name);
 
         if (card.tagName.toLowerCase() === "a") {
-          card.href = "story.html?id=" + story.id;
+          card.href = "/story?id=" + story.id;
         }
       });
 
